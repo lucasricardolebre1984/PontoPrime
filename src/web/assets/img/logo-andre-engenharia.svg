@@ -1,0 +1,63 @@
+<!-- Logo André Engenharia - Profissional e Moderno -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 100" width="320" height="100">
+  <defs>
+    <linearGradient id="gradEngenharia1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1a237e;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#0d47a1;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="gradEngenharia2" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#ff6f00;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#ffa000;stop-opacity:1" />
+    </linearGradient>
+    <filter id="shadow">
+      <feDropShadow dx="0" dy="2" stdDeviation="2" flood-opacity="0.3"/>
+    </filter>
+  </defs>
+
+  <!-- Ícone - Estrutura/Construção estilizada -->
+  <g filter="url(#shadow)">
+    <!-- Base do prédio/estrutura -->
+    <rect x="10" y="45" width="55" height="40" fill="url(#gradEngenharia1)" rx="2"/>
+
+    <!-- Detalhes de janelas -->
+    <rect x="17" y="52" width="8" height="8" fill="#ff6f00" opacity="0.8"/>
+    <rect x="30" y="52" width="8" height="8" fill="#ff6f00" opacity="0.8"/>
+    <rect x="43" y="52" width="8" height="8" fill="#ff6f00" opacity="0.8"/>
+
+    <rect x="17" y="65" width="8" height="8" fill="#ff6f00" opacity="0.8"/>
+    <rect x="30" y="65" width="8" height="8" fill="#ff6f00" opacity="0.8"/>
+    <rect x="43" y="65" width="8" height="8" fill="#ff6f00" opacity="0.8"/>
+
+    <!-- Topo triangular (telhado) -->
+    <path d="M 5 45 L 37.5 25 L 70 45 Z" fill="url(#gradEngenharia2)"/>
+
+    <!-- Linha de fundação -->
+    <rect x="5" y="85" width="65" height="4" fill="#ff6f00"/>
+  </g>
+
+  <!-- Texto ANDRÉ -->
+  <text x="85" y="45" font-family="'Arial Black', 'Helvetica', sans-serif"
+        font-size="32" font-weight="900" fill="url(#gradEngenharia1)" letter-spacing="2">
+    ANDRÉ
+  </text>
+
+  <!-- Texto ENGENHARIA -->
+  <text x="85" y="75" font-family="'Arial', sans-serif"
+        font-size="24" font-weight="700" fill="#ff6f00" letter-spacing="4">
+    ENGENHARIA
+  </text>
+
+  <!-- Linha decorativa -->
+  <rect x="85" y="82" width="220" height="3" fill="url(#gradEngenharia1)" rx="1"/>
+
+  <!-- Slogan -->
+  <text x="85" y="95" font-family="Arial, sans-serif"
+        font-size="10" fill="#666" letter-spacing="1">
+    Excelência em Projetos e Soluções
+  </text>
+
+  <!-- Detalhe geométrico moderno -->
+  <circle cx="310" cy="50" r="3" fill="#ff6f00"/>
+  <circle cx="310" cy="60" r="2" fill="#1a237e" opacity="0.5"/>
+  <circle cx="310" cy="68" r="2.5" fill="#ff6f00" opacity="0.7"/>
+</svg>
