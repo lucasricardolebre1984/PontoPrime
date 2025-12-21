@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">PontoPrime</string>
+    <string name="login_title">Bem-vindo ao PontoPrime</string>
+    <string name="login_subtitle">Sistema de Registro de Ponto</string>
+    <string name="employee_id">ID do Funcionário</string>
+    <string name="enter_id">Digite seu ID</string>
+    <string name="login_button">Entrar</string>
+    <string name="register_punch">Registrar Ponto</string>
+    <string name="view_history">Ver Histórico</string>
+    <string name="punch_success">Ponto registrado com sucesso!</string>
+    <string name="punch_error">Erro ao registrar ponto</string>
+    <string name="biometric_prompt_title">Autenticação Biométrica</string>
+    <string name="biometric_prompt_subtitle">Use sua biometria para registrar o ponto</string>
+    <string name="biometric_prompt_cancel">Cancelar</string>
+    <string name="location_permission_required">Permissão de localização necessária</string>
+    <string name="history_title">Histórico de Registros</string>
+    <string name="logout">Sair</string>
+</resources>
