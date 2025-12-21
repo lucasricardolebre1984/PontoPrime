@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PontoPrime - Painel de Demonstração</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="logo">
+                <h1>🕐 PontoPrime</h1>
+                <p class="subtitle">Sistema de Registro de Ponto com Biometria</p>
+            </div>
+            <div class="demo-badge">VERSÃO DEMO</div>
+        </header>
+
+        <!-- Stats Cards -->
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-icon">👥</div>
+                <div class="stat-content">
+                    <h3 id="total-employees">-</h3>
+                    <p>Funcionários Ativos</p>
+                </div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon">📍</div>
+                <div class="stat-content">
+                    <h3 id="total-punches">-</h3>
+                    <p>Registros Hoje</p>
+                </div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon">✅</div>
+                <div class="stat-content">
+                    <h3 id="synced-punches">-</h3>
+                    <p>Sincronizados</p>
+                </div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon">🟢</div>
+                <div class="stat-content">
+                    <h3 id="api-status">-</h3>
+                    <p>Status da API</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Employee Filter -->
+        <div class="filter-section">
+            <label for="employee-select">Filtrar por Funcionário:</label>
+            <select id="employee-select">
+                <option value="all">Todos os Funcionários</option>
+            </select>
+            <button id="refresh-btn" class="btn-refresh">🔄 Atualizar</button>
+        </div>
+
+        <!-- Records Table -->
+        <div class="table-section">
+            <h2>Registros de Ponto</h2>
+            <div class="table-container">
+                <table id="records-table">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Funcionário</th>
+                            <th>Data/Hora</th>
+                            <th>Localização</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody id="records-tbody">
+                        <tr>
+                            <td colspan="5" class="loading">Carregando registros...</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Download App Section -->
+        <div class="download-section">
+            <h2>📱 Baixar Aplicativo Android</h2>
+            <p>Faça o download do app PontoPrime para Android e comece a registrar pontos:</p>
+            <a href="pontoprime.apk" class="btn-download" download>
+                ⬇️ Baixar APK (Android 7.0+)
+            </a>
+            <p class="download-note">
+                <strong>Instruções:</strong><br>
+                1. Baixe o arquivo APK<br>
+                2. Permita instalação de fontes desconhecidas nas configurações<br>
+                3. Instale o app<br>
+                4. Faça login com seu ID de funcionário
+            </p>
+        </div>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p>&copy; 2025 PontoPrime - Versão Demo | Desenvolvido para André - AutoManiaAI</p>
+            <p class="api-endpoint">API: <code id="api-url">Carregando...</code></p>
+        </footer>
+    </div>
+
+    <script src="assets/js/config.js"></script>
+    <script src="assets/js/app.js"></script>
+</body>
+</html>
