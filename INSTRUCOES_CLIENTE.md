@@ -8,7 +8,7 @@ Este é seu sistema de registro de ponto com biometria nativa Android.
 
 ## 🌐 Acesso ao Painel Web
 
-**URL:** https://automaniaai.com.br/pontoprime/andre/
+**URL:** https://automaniaai.com.br/propostas/andre/painel.html
 
 O painel web mostra:
 - ✅ Total de funcionários ativos
@@ -26,7 +26,7 @@ O painel web mostra:
 ### Passo 1: Download
 
 Acesse pelo celular:
-https://automaniaai.com.br/pontoprime/andre/pontoprime.apk
+https://automaniaai.com.br/propostas/andre/pontoprime.apk
 
 Ou escaneie este QR Code (será gerado para você):
 
@@ -161,9 +161,9 @@ Após aprovar a demo, a versão completa terá:
 ## 📞 Suporte Técnico
 
 ### URLs Importantes
-- **Painel Web:** https://automaniaai.com.br/pontoprime/andre/
+- **Painel Web:** https://automaniaai.com.br/propostas/andre/painel.html
 - **API (para testes):** http://54.207.172.193:9000/docs
-- **Download APK:** https://automaniaai.com.br/pontoprime/andre/pontoprime.apk
+- **Download APK:** https://automaniaai.com.br/propostas/andre/pontoprime.apk
 
 ### Em Caso de Problemas
 

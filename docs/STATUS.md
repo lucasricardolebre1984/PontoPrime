@@ -1,10 +1,10 @@
 # Status Atual do Projeto
 
-**Última Atualização:** 2025-12-21
+**Última Atualização:** 2025-12-22
 
-**Fase Atual:** MVP COMPLETO ✅
+**Fase Atual:** DEPLOY PRODUÇÃO - EM ANDAMENTO 🚀
 
-**Próximo Passo:** Testar integração Backend + Android e iniciar Fase 2 (Produção).
+**Próximo Passo:** Finalizar build do APK Android e testar integração completa.
 
 ## Checklist MVP - CONCLUÍDO ✅
 
@@ -38,10 +38,37 @@
 - [x] README do backend (src/backend/README.md)
 - [x] README do Android (src/android/README.md)
 
+## Deploy Produção - DEMO 7 DIAS 🚀
+
+### Infraestrutura
+- [x] **Servidor AWS** - Ubuntu 24.04 em 54.207.172.193
+- [x] **Backend API** - Rodando na porta 9000 (http://54.207.172.193:9000)
+- [x] **Security Group** - Porta 9000 liberada
+- [x] **Health Check** - API respondendo corretamente
+- [x] **Documentação API** - Swagger UI acessível em /docs
+
+### Web Panel
+- [x] **Painel Web** - Hospedado em KingHost FTP
+- [x] **URL Produção** - https://automaniaai.com.br/propostas/andre/painel.html
+- [x] **Design Institucional** - Logos AutoManiaAI + André Engenharia
+- [x] **Cores Corporativas** - Azul #1a237e + Laranja #ff6f00
+- [x] **Integração API** - Conectado ao backend em produção
+
+### App Android
+- [x] **Configuração API** - URL atualizada para produção (54.207.172.193:9000)
+- [x] **Gradle Wrapper** - Criado e versionado
+- [ ] **Build APK** - EM ANDAMENTO
+- [ ] **Upload FTP** - Pendente
+- [ ] **Testes** - Pendente
+
 ## Commits Realizados
 1. ✅ **genesis** - Estrutura inicial e documentação
 2. ✅ **backend** - FastAPI completo com endpoints
 3. ✅ **android** - App completo com todas as telas
+4. ✅ **deploy_aws** - Configuração de deploy para AWS
+5. ✅ **web_panel** - Painel web com branding institucional
+6. ✅ **api_url_fix** - Correção URL da API para produção
+7. ✅ **gradle_wrapper** - Adição do Gradle Wrapper
 
 ## Como Testar
 
