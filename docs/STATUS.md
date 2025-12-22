@@ -57,9 +57,11 @@
 ### App Android
 - [x] **Configuração API** - URL atualizada para produção (54.207.172.193:9000)
 - [x] **Gradle Wrapper** - Criado e versionado
-- [ ] **Build APK** - EM ANDAMENTO
-- [ ] **Upload FTP** - Pendente
-- [ ] **Testes** - Pendente
+- [x] **Android SDK** - Instalado e configurado em `/home/ubuntu/android-sdk`
+- [x] **Build APK Debug** - Assinado e gerado (11 MB)
+- [x] **Arquivo Local** - `~/pontoprime.apk` (11 MB) pronto para upload
+- [ ] **Upload FTP** - APK assinado precisa substituir o antigo (7.8 MB)
+- [ ] **Teste Instalação** - Validar APK assinado instala corretamente no Android
 
 ## Commits Realizados
 1. ✅ **genesis** - Estrutura inicial e documentação
