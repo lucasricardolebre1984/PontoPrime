@@ -59,9 +59,13 @@
 - [x] **Gradle Wrapper** - Criado e versionado
 - [x] **Android SDK** - Instalado e configurado em `/home/ubuntu/android-sdk`
 - [x] **Build APK Debug** - Assinado e gerado (11 MB)
-- [x] **Arquivo Local** - `~/pontoprime.apk` (11 MB) pronto para upload
-- [ ] **Upload FTP** - APK assinado precisa substituir o antigo (7.8 MB)
-- [ ] **Teste Instalação** - Validar APK assinado instala corretamente no Android
+- [x] **Upload FTP** - APK assinado (11 MB) no FTP
+- [x] **Instalação Testada** - APK instalando corretamente no Android
+- [x] **Login Funcionando** - ID 123 autenticando
+- [x] **Registro de Ponto** - Funcionando com sucesso
+- [x] **Histórico Local** - Mostrando 3 registros sincronizados
+- [x] **Geolocalização** - Capturando São Paulo (-23.5505, -46.6333)
+- [ ] **Painel Web Sync** - Mixed Content bloqueando (HTTPS→HTTP)
 
 ## Commits Realizados
 1. ✅ **genesis** - Estrutura inicial e documentação
