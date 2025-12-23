@@ -1,0 +1,99 @@
+# Docker Compose para PontoPrime V2 FULL - PostgreSQL
+# Roda em paralelo com DEMO (porta 9001)
+# Stack: Backend V2 (FastAPI) + PostgreSQL + Nginx
+
+version: '3.8'
+
+services:
+  # Banco de Dados PostgreSQL
+  db_v2:
+    image: postgres:15-alpine
+    container_name: pontoprime_db_v2
+    environment:
+      POSTGRES_USER: ${DB_USER:-pontoprime}
+      POSTGRES_PASSWORD: ${DB_PASSWORD:-pontoprime2025}
+      POSTGRES_DB: ${DB_NAME:-pontoprime_db}
+      PGDATA: /var/lib/postgresql/data/pgdata
+    volumes:
+      - postgres_data_v2:/var/lib/postgresql/data
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql:ro
+    ports:
+      - "5433:5432"  # Porta externa 5433 (evita conflito com 5432)
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${DB_USER:-pontoprime}"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    restart: unless-stopped
+    networks:
+      - pontoprime_network_v2
+
+  # Backend FastAPI V2 FULL
+  backend_v2:
+    build:
+      context: .
+      dockerfile: Dockerfile.v2
+    container_name: pontoprime_backend_v2
+    environment:
+      # Database
+      DATABASE_URL: postgresql://${DB_USER:-pontoprime}:${DB_PASSWORD:-pontoprime2025}@db_v2:5432/${DB_NAME:-pontoprime_db}
+
+      # Security
+      JWT_SECRET: ${JWT_SECRET:-change-this-secret-in-production}
+      JWT_ALGORITHM: HS256
+      JWT_EXPIRATION: 30
+
+      # Application
+      ENVIRONMENT: ${ENVIRONMENT:-production}
+      DEBUG: ${DEBUG:-false}
+      LOG_LEVEL: ${LOG_LEVEL:-info}
+
+      # CORS
+      ALLOWED_ORIGINS: ${ALLOWED_ORIGINS:-*}
+    ports:
+      - "9001:9001"  # Porta 9001 para V2 FULL (DEMO fica na 9000)
+    depends_on:
+      db_v2:
+        condition: service_healthy
+    volumes:
+      - ./logs:/app/logs
+      - ../web:/app/static
+    restart: unless-stopped
+    networks:
+      - pontoprime_network_v2
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:9001/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+
+  # Nginx Reverse Proxy (HTTPS) - Porta 8443
+  nginx_v2:
+    image: nginx:alpine
+    container_name: pontoprime_nginx_v2
+    ports:
+      - "8080:80"   # HTTP na 8080 (evita conflito)
+      - "8443:443"  # HTTPS na 8443 (evita conflito)
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf:ro
+      - ./ssl:/etc/nginx/ssl:ro
+      - ../web:/usr/share/nginx/html:ro
+    depends_on:
+      - backend_v2
+    restart: unless-stopped
+    networks:
+      - pontoprime_network_v2
+    healthcheck:
+      test: ["CMD", "wget", "--quiet", "--tries=1", "--spider", "http://localhost/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+networks:
+  pontoprime_network_v2:
+    driver: bridge
+
+volumes:
+  postgres_data_v2:
+    driver: local

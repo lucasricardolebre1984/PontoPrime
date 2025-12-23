@@ -473,16 +473,16 @@ if __name__ == "__main__":
     logger.info("=" * 60)
     logger.info("🚀 PontoPrime API V2 - Produção Full (PostgreSQL)")
     logger.info("=" * 60)
-    logger.info("📍 Porta: 9000")
+    logger.info("📍 Porta: 9001 (DEMO na porta 9000)")
     logger.info("🌐 Cliente: PLANTHERM - AutoManiaAI")
     logger.info("🗄️ Database: PostgreSQL")
-    logger.info("📊 Painel Web: http://54.207.172.193:9000/painel/")
-    logger.info("📚 API Docs: http://54.207.172.193:9000/docs")
+    logger.info("📊 Painel Web: http://54.207.172.193:9001/painel/")
+    logger.info("📚 API Docs: http://54.207.172.193:9001/docs")
     logger.info("=" * 60)
 
     uvicorn.run(
         app,
         host="0.0.0.0",
-        port=9000,
+        port=9001,  # Porta 9001 para V2 FULL (DEMO fica na 9000)
         log_level="info"
     )

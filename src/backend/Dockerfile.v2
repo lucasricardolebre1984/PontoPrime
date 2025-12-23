@@ -1,5 +1,5 @@
-# Dockerfile Multi-Stage para PontoPrime Backend
-# Otimizado para produção
+# Dockerfile Multi-Stage para PontoPrime Backend V2 FULL
+# Versão com PostgreSQL, Migrations e CRUD completo
 
 # Stage 1: Builder
 FROM python:3.11-slim as builder
@@ -47,10 +47,11 @@ USER pontoprime
 
 # Healthcheck
 HEALTHCHECK --interval=30s --timeout=10s --start-period=5s --retries=3 \
-    CMD curl -f http://localhost:9000/health || exit 1
+    CMD curl -f http://localhost:9001/health || exit 1
 
-# Expor porta
-EXPOSE 9000
+# Expor porta (9001 para V2 FULL)
+EXPOSE 9001
 
-# Comando de inicialização (DEMO - V1)
-CMD ["python", "main_production.py"]
+# Comando de inicialização (V2 FULL)
+# Roda migrations e depois inicia o servidor V2
+CMD ["sh", "-c", "alembic upgrade head && python main_v2.py"]
