@@ -53,4 +53,5 @@ HEALTHCHECK --interval=30s --timeout=10s --start-period=5s --retries=3 \
 EXPOSE 9000
 
 # Comando de inicialização
-CMD ["python", "main_production.py"]
+# Roda migrations e depois inicia o servidor
+CMD ["sh", "-c", "alembic upgrade head && python main_v2.py"]
