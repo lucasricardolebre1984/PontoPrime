@@ -1,0 +1,1329 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PontoPrime - Proposta Comercial</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            /* Cores AutoManiaAI - Tech Modernas */
+            --primary: #0066FF;
+            --primary-dark: #0052CC;
+            --secondary: #00D4AA;
+            --accent: #FF6B35;
+            --dark: #1A1A2E;
+            --gray: #4A5568;
+            --light-gray: #E2E8F0;
+            --white: #FFFFFF;
+
+            /* Gradientes */
+            --gradient-primary: linear-gradient(135deg, #0066FF 0%, #00D4AA 100%);
+            --gradient-dark: linear-gradient(135deg, #1A1A2E 0%, #16213E 100%);
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: var(--dark);
+            background: var(--white);
+        }
+
+        .page {
+            width: 210mm;
+            min-height: 297mm;
+            padding: 20mm;
+            margin: 0 auto;
+            background: white;
+            box-shadow: 0 0 30px rgba(0,0,0,0.1);
+        }
+
+        /* CAPA */
+        .cover {
+            background: var(--gradient-primary);
+            color: white;
+            text-align: center;
+            padding: 60px 40px;
+            border-radius: 20px;
+            margin-bottom: 40px;
+        }
+
+        .cover h1 {
+            font-size: 56px;
+            font-weight: 800;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 10px rgba(0,0,0,0.2);
+        }
+
+        .cover .tagline {
+            font-size: 24px;
+            font-weight: 300;
+            margin-bottom: 40px;
+            opacity: 0.9;
+        }
+
+        .cover .badge {
+            display: inline-block;
+            background: rgba(255,255,255,0.2);
+            padding: 15px 30px;
+            border-radius: 50px;
+            font-size: 18px;
+            font-weight: 600;
+            backdrop-filter: blur(10px);
+        }
+
+        /* LOGO AREA */
+        .logo-area {
+            text-align: center;
+            margin: 40px 0;
+        }
+
+        .logo-area .company {
+            font-size: 32px;
+            font-weight: 700;
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        /* SEÇÕES */
+        .section {
+            margin: 50px 0;
+        }
+
+        .section-title {
+            font-size: 36px;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 30px;
+            padding-bottom: 15px;
+            border-bottom: 4px solid var(--secondary);
+        }
+
+        .section-subtitle {
+            font-size: 24px;
+            font-weight: 600;
+            color: var(--primary-dark);
+            margin: 30px 0 20px 0;
+        }
+
+        /* GRID DE FEATURES */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
+            margin: 30px 0;
+        }
+
+        .feature-card {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            padding: 25px;
+            border-radius: 15px;
+            border-left: 5px solid var(--primary);
+            transition: transform 0.3s;
+        }
+
+        .feature-card:hover {
+            transform: translateX(5px);
+        }
+
+        .feature-card h3 {
+            color: var(--primary);
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+        }
+
+        .feature-card .icon {
+            width: 24px;
+            height: 24px;
+            background: var(--primary);
+            color: white;
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 10px;
+            font-size: 14px;
+        }
+
+        .feature-card p {
+            color: var(--gray);
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+        /* COMPARAÇÃO */
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 30px 0;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .comparison-table thead {
+            background: var(--gradient-primary);
+            color: white;
+        }
+
+        .comparison-table th {
+            padding: 20px;
+            font-weight: 700;
+            font-size: 16px;
+            text-align: left;
+        }
+
+        .comparison-table td {
+            padding: 18px 20px;
+            border-bottom: 1px solid var(--light-gray);
+        }
+
+        .comparison-table tbody tr:hover {
+            background: #f8f9fa;
+        }
+
+        .check {
+            color: var(--secondary);
+            font-weight: 700;
+            font-size: 20px;
+        }
+
+        .cross {
+            color: #E53E3E;
+            font-weight: 700;
+            font-size: 20px;
+        }
+
+        /* PRICING */
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin: 40px 0;
+        }
+
+        .pricing-card {
+            background: white;
+            border: 2px solid var(--light-gray);
+            border-radius: 20px;
+            padding: 35px 25px;
+            text-align: center;
+            transition: all 0.3s;
+        }
+
+        .pricing-card.featured {
+            border-color: var(--primary);
+            background: var(--gradient-primary);
+            color: white;
+            transform: scale(1.05);
+            box-shadow: 0 10px 30px rgba(0,102,255,0.3);
+        }
+
+        .pricing-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        .pricing-card h3 {
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+
+        .pricing-card .price {
+            font-size: 48px;
+            font-weight: 800;
+            margin: 20px 0;
+        }
+
+        .pricing-card .price small {
+            font-size: 18px;
+            font-weight: 400;
+        }
+
+        .pricing-card ul {
+            list-style: none;
+            text-align: left;
+            margin: 25px 0;
+        }
+
+        .pricing-card ul li {
+            padding: 10px 0;
+            border-bottom: 1px solid rgba(0,0,0,0.1);
+            font-size: 14px;
+        }
+
+        .pricing-card.featured ul li {
+            border-bottom-color: rgba(255,255,255,0.2);
+        }
+
+        .pricing-card ul li:before {
+            content: "✓";
+            margin-right: 10px;
+            color: var(--secondary);
+            font-weight: 700;
+        }
+
+        .pricing-card.featured ul li:before {
+            color: white;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 15px 40px;
+            background: var(--primary);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 700;
+            transition: all 0.3s;
+            margin-top: 20px;
+        }
+
+        .btn:hover {
+            background: var(--primary-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,102,255,0.3);
+        }
+
+        .pricing-card.featured .btn {
+            background: white;
+            color: var(--primary);
+        }
+
+        /* SPECS LIST */
+        .specs-list {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            margin: 30px 0;
+        }
+
+        .spec-item {
+            display: flex;
+            align-items: center;
+            padding: 15px;
+            background: #f8f9fa;
+            border-radius: 10px;
+            border-left: 4px solid var(--secondary);
+        }
+
+        .spec-item .icon {
+            width: 40px;
+            height: 40px;
+            background: var(--gradient-primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            margin-right: 15px;
+            font-weight: 700;
+        }
+
+        .spec-item .text {
+            flex: 1;
+        }
+
+        .spec-item .label {
+            font-size: 12px;
+            color: var(--gray);
+            text-transform: uppercase;
+            font-weight: 600;
+        }
+
+        .spec-item .value {
+            font-size: 16px;
+            font-weight: 700;
+            color: var(--dark);
+        }
+
+        /* HIGHLIGHT BOX */
+        .highlight-box {
+            background: var(--gradient-primary);
+            color: white;
+            padding: 40px;
+            border-radius: 20px;
+            margin: 40px 0;
+            text-align: center;
+        }
+
+        .highlight-box h2 {
+            font-size: 32px;
+            margin-bottom: 20px;
+        }
+
+        .highlight-box p {
+            font-size: 18px;
+            opacity: 0.9;
+            line-height: 1.8;
+        }
+
+        /* FOOTER */
+        .footer {
+            text-align: center;
+            margin-top: 60px;
+            padding: 30px;
+            border-top: 2px solid var(--light-gray);
+        }
+
+        .footer .company-name {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--primary);
+        }
+
+        .footer .contact {
+            margin-top: 15px;
+            color: var(--gray);
+        }
+
+        @media print {
+            .page {
+                width: 100%;
+                margin: 0;
+                box-shadow: none;
+            }
+
+            .page-break {
+                page-break-before: always;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<!-- PÁGINA 1: CAPA -->
+<div class="page">
+    <div class="cover">
+        <h1>PontoPrime</h1>
+        <p class="tagline">Sistema Inteligente de Ponto Eletrônico com Biometria</p>
+        <div class="badge">🚀 Tecnologia 100% Nacional</div>
+    </div>
+
+    <div class="logo-area">
+        <p class="company">AutoManiaAI</p>
+        <p style="color: var(--gray); margin-top: 10px;">Soluções Inteligentes em Gestão de Pessoas</p>
+    </div>
+
+    <div class="highlight-box" style="margin-top: 80px;">
+        <h2>Revolucione o Controle de Ponto da Sua Empresa</h2>
+        <p>
+            Sistema completo com App Android, Painel Web em Tempo Real e Tecnologia de Biometria Nativa.
+            Elimine fraudes, reduza custos e tenha controle total sobre a jornada dos seus colaboradores.
+        </p>
+    </div>
+
+    <div class="specs-list" style="margin-top: 60px;">
+        <div class="spec-item">
+            <div class="icon">📱</div>
+            <div class="text">
+                <div class="label">Plataforma</div>
+                <div class="value">Android Nativo</div>
+            </div>
+        </div>
+        <div class="spec-item">
+            <div class="icon">🌐</div>
+            <div class="text">
+                <div class="label">Painel Web</div>
+                <div class="value">Tempo Real</div>
+            </div>
+        </div>
+        <div class="spec-item">
+            <div class="icon">🔐</div>
+            <div class="text">
+                <div class="label">Segurança</div>
+                <div class="value">Biometria Digital</div>
+            </div>
+        </div>
+        <div class="spec-item">
+            <div class="icon">📍</div>
+            <div class="text">
+                <div class="label">Localização</div>
+                <div class="value">GPS em Tempo Real</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- PÁGINA 2: O QUE É O PONTOPRIME -->
+<div class="page page-break">
+    <div class="section">
+        <h2 class="section-title">O que é o PontoPrime?</h2>
+        <p style="font-size: 18px; color: var(--gray); line-height: 1.8; margin-bottom: 30px;">
+            O <strong>PontoPrime</strong> é uma solução completa e moderna para gestão de ponto eletrônico,
+            desenvolvida 100% no Brasil pela AutoManiaAI. Combina tecnologia de ponta com simplicidade de uso,
+            oferecendo <strong>autenticação biométrica nativa</strong>, <strong>geolocalização em tempo real</strong>
+            e <strong>painel web intuitivo</strong> para gestores.
+        </p>
+
+        <h3 class="section-subtitle">📦 Componentes do Sistema</h3>
+
+        <div class="features-grid">
+            <div class="feature-card">
+                <h3><span class="icon">📱</span> App Android</h3>
+                <p>
+                    Aplicativo nativo desenvolvido em Kotlin com Jetpack Compose. Interface moderna,
+                    rápida e intuitiva. Funciona offline e sincroniza automaticamente quando reconecta.
+                </p>
+            </div>
+
+            <div class="feature-card">
+                <h3><span class="icon">🔐</span> Biometria Nativa</h3>
+                <p>
+                    Utiliza o sensor de impressão digital do próprio celular (BiometricPrompt API).
+                    Sem custos com hardware adicional. Segurança validada pelo sistema operacional.
+                </p>
+            </div>
+
+            <div class="feature-card">
+                <h3><span class="icon">📍</span> Geolocalização GPS</h3>
+                <p>
+                    Captura automaticamente a localização exata do registro de ponto.
+                    Identifica endereço, latitude e longitude para auditoria completa.
+                </p>
+            </div>
+
+            <div class="feature-card">
+                <h3><span class="icon">🌐</span> Painel Web</h3>
+                <p>
+                    Dashboard em tempo real para gestores. Visualize todos os registros,
+                    gere relatórios, gerencie funcionários e monitore a jornada de trabalho.
+                </p>
+            </div>
+
+            <div class="feature-card">
+                <h3><span class="icon">🗄️</span> Banco de Dados Real</h3>
+                <p>
+                    PostgreSQL profissional com backup automático. Dados sempre seguros e acessíveis.
+                    Histórico completo preservado indefinidamente.
+                </p>
+            </div>
+
+            <div class="feature-card">
+                <h3><span class="icon">☁️</span> Cloud AWS</h3>
+                <p>
+                    Hospedado na Amazon Web Services (AWS), garantindo disponibilidade 24/7,
+                    escalabilidade e conformidade com LGPD.
+                </p>
+            </div>
+
+            <div class="feature-card">
+                <h3><span class="icon">📊</span> Relatórios Completos</h3>
+                <p>
+                    Exportação em PDF e Excel. Filtros por funcionário, período, departamento.
+                    Dados prontos para integração com folha de pagamento.
+                </p>
+            </div>
+
+            <div class="feature-card">
+                <h3><span class="icon">🔄</span> Modo Offline</h3>
+                <p>
+                    Registros salvos localmente se sem internet. Sincronização automática
+                    quando reconecta. Zero perda de dados.
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- PÁGINA 3: FUNCIONALIDADES DETALHADAS -->
+<div class="page page-break">
+    <div class="section">
+        <h2 class="section-title">Funcionalidades Completas</h2>
+
+        <h3 class="section-subtitle">🎯 Para o Colaborador (App Android)</h3>
+        <div class="features-grid">
+            <div class="feature-card">
+                <h3><span class="icon">✓</span> Login Simples</h3>
+                <p>Identificação por código do funcionário. Rápido e sem complicação.</p>
+            </div>
+            <div class="feature-card">
+                <h3><span class="icon">✓</span> Registro em 3 Segundos</h3>
+                <p>Um toque no botão + biometria digital. Pronto! Ponto registrado.</p>
+            </div>
+            <div class="feature-card">
+                <h3><span class="icon">✓</span> Histórico Pessoal</h3>
+                <p>Visualize todos os seus registros com data, hora e localização.</p>
+            </div>
+            <div class="feature-card">
+                <h3><span class="icon">✓</span> Confirmação Visual</h3>
+                <p>Feedback imediato de sucesso ou erro. Sempre saiba se foi registrado.</p>
+            </div>
+        </div>
+
+        <h3 class="section-subtitle" style="margin-top: 50px;">👔 Para o Gestor (Painel Web)</h3>
+        <div class="features-grid">
+            <div class="feature-card">
+                <h3><span class="icon">✓</span> Dashboard em Tempo Real</h3>
+                <p>Veja estatísticas ao vivo: funcionários ativos, total de registros, últimas marcações.</p>
+            </div>
+            <div class="feature-card">
+                <h3><span class="icon">✓</span> Gerenciar Funcionários</h3>
+                <p>CRUD completo: criar, editar, desativar funcionários. Organização por departamento.</p>
+            </div>
+            <div class="feature-card">
+                <h3><span class="icon">✓</span> Visualizar Registros</h3>
+                <p>Lista completa com filtros por funcionário, data, departamento. Paginação inteligente.</p>
+            </div>
+            <div class="feature-card">
+                <h3><span class="icon">✓</span> Mapa de Localizações</h3>
+                <p>Veja onde cada ponto foi registrado. Identifique padrões e irregularidades.</p>
+            </div>
+            <div class="feature-card">
+                <h3><span class="icon">✓</span> Exportar Relatórios</h3>
+                <p>PDF e Excel prontos para DP. Dados formatados para folha de pagamento.</p>
+            </div>
+            <div class="feature-card">
+                <h3><span class="icon">✓</span> Auditoria Completa</h3>
+                <p>Log de todas as ações. Rastreabilidade total para compliance e fiscalização.</p>
+            </div>
+        </div>
+
+        <h3 class="section-subtitle" style="margin-top: 50px;">🔧 Recursos Técnicos Avançados</h3>
+        <div class="features-grid">
+            <div class="feature-card">
+                <h3><span class="icon">✓</span> API RESTful</h3>
+                <p>Integração com sistemas de RH, ERP e folha de pagamento via API documentada.</p>
+            </div>
+            <div class="feature-card">
+                <h3><span class="icon">✓</span> Migrations Versionadas</h3>
+                <p>Atualizações de banco sem downtime. Rollback seguro em caso de problemas.</p>
+            </div>
+            <div class="feature-card">
+                <h3><span class="icon">✓</span> Multi-empresa</h3>
+                <p>Suporte a múltiplas empresas no mesmo sistema. Dados completamente isolados.</p>
+            </div>
+            <div class="feature-card">
+                <h3><span class="icon">✓</span> Soft Delete</h3>
+                <p>Funcionários desativados mantêm histórico. Conformidade com leis trabalhistas.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- PÁGINA 4: COMPARAÇÃO -->
+<div class="page page-break">
+    <div class="section">
+        <h2 class="section-title">PontoPrime vs Sistemas Convencionais</h2>
+
+        <table class="comparison-table">
+            <thead>
+                <tr>
+                    <th>Característica</th>
+                    <th>Sistemas Convencionais</th>
+                    <th style="color: var(--secondary);">PontoPrime</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Custo Inicial</strong></td>
+                    <td>R$ 3.000 - R$ 15.000 (hardware)</td>
+                    <td class="check">R$ 0 (usa celular próprio)</td>
+                </tr>
+                <tr>
+                    <td><strong>Biometria</strong></td>
+                    <td>Requer equipamento específico (R$ 1.500+)</td>
+                    <td class="check">Nativa do celular (grátis)</td>
+                </tr>
+                <tr>
+                    <td><strong>Instalação</strong></td>
+                    <td>Técnico especializado (1-2 semanas)</td>
+                    <td class="check">Download do app (5 minutos)</td>
+                </tr>
+                <tr>
+                    <td><strong>Manutenção</strong></td>
+                    <td>Contratos anuais (R$ 500-2.000/ano)</td>
+                    <td class="check">Incluído na mensalidade</td>
+                </tr>
+                <tr>
+                    <td><strong>Mobilidade</strong></td>
+                    <td class="cross">Fixo (funcionário vai até o relógio)</td>
+                    <td class="check">Móvel (registra de qualquer lugar)</td>
+                </tr>
+                <tr>
+                    <td><strong>Geolocalização</strong></td>
+                    <td class="cross">Não possui</td>
+                    <td class="check">GPS em tempo real</td>
+                </tr>
+                <tr>
+                    <td><strong>Trabalho Remoto</strong></td>
+                    <td class="cross">Incompatível</td>
+                    <td class="check">Perfeito para home office</td>
+                </tr>
+                <tr>
+                    <td><strong>Modo Offline</strong></td>
+                    <td class="cross">Perde dados sem internet</td>
+                    <td class="check">Sincroniza depois</td>
+                </tr>
+                <tr>
+                    <td><strong>Relatórios</strong></td>
+                    <td>Limitados (apenas básicos)</td>
+                    <td class="check">Completos (PDF, Excel, API)</td>
+                </tr>
+                <tr>
+                    <td><strong>Painel Web</strong></td>
+                    <td>Interface desatualizada</td>
+                    <td class="check">Moderno e responsivo</td>
+                </tr>
+                <tr>
+                    <td><strong>Atualizações</strong></td>
+                    <td>Pagas (upgrade de hardware)</td>
+                    <td class="check">Automáticas e gratuitas</td>
+                </tr>
+                <tr>
+                    <td><strong>Suporte</strong></td>
+                    <td>Horário comercial (ligação)</td>
+                    <td class="check">24/7 (WhatsApp, Email, Chat)</td>
+                </tr>
+                <tr>
+                    <td><strong>Escalabilidade</strong></td>
+                    <td>Limitado (precisa novo hardware)</td>
+                    <td class="check">Ilimitado (cloud)</td>
+                </tr>
+                <tr>
+                    <td><strong>Conformidade LGPD</strong></td>
+                    <td>Responsabilidade do cliente</td>
+                    <td class="check">Certificado e auditado</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="highlight-box" style="margin-top: 40px;">
+            <h2>💡 Economia Média</h2>
+            <p style="font-size: 22px; font-weight: 600;">
+                Empresas que migram para o PontoPrime economizam em média <strong>R$ 8.500</strong>
+                no primeiro ano (eliminação de hardware + manutenção + upgrades).
+            </p>
+        </div>
+    </div>
+</div>
+
+<!-- PÁGINA 5: ARQUITETURA TÉCNICA -->
+<div class="page page-break">
+    <div class="section">
+        <h2 class="section-title">Arquitetura Técnica</h2>
+
+        <h3 class="section-subtitle">🏗️ Stack Tecnológica</h3>
+
+        <div class="specs-list">
+            <div class="spec-item">
+                <div class="icon">📱</div>
+                <div class="text">
+                    <div class="label">Mobile</div>
+                    <div class="value">Kotlin + Jetpack Compose</div>
+                </div>
+            </div>
+            <div class="spec-item">
+                <div class="icon">⚙️</div>
+                <div class="text">
+                    <div class="label">Backend</div>
+                    <div class="value">Python + FastAPI</div>
+                </div>
+            </div>
+            <div class="spec-item">
+                <div class="icon">🗄️</div>
+                <div class="text">
+                    <div class="label">Banco de Dados</div>
+                    <div class="value">PostgreSQL 15</div>
+                </div>
+            </div>
+            <div class="spec-item">
+                <div class="icon">☁️</div>
+                <div class="text">
+                    <div class="label">Cloud</div>
+                    <div class="value">AWS EC2 + S3</div>
+                </div>
+            </div>
+            <div class="spec-item">
+                <div class="icon">🐳</div>
+                <div class="text">
+                    <div class="label">Containers</div>
+                    <div class="value">Docker + Docker Compose</div>
+                </div>
+            </div>
+            <div class="spec-item">
+                <div class="icon">🔐</div>
+                <div class="text">
+                    <div class="label">Segurança</div>
+                    <div class="value">JWT + BiometricPrompt API</div>
+                </div>
+            </div>
+            <div class="spec-item">
+                <div class="icon">📡</div>
+                <div class="text">
+                    <div class="label">API</div>
+                    <div class="value">RESTful + OpenAPI 3.0</div>
+                </div>
+            </div>
+            <div class="spec-item">
+                <div class="icon">🌐</div>
+                <div class="text">
+                    <div class="label">Frontend</div>
+                    <div class="value">HTML5 + CSS3 + JavaScript</div>
+                </div>
+            </div>
+        </div>
+
+        <h3 class="section-subtitle" style="margin-top: 50px;">🔒 Segurança e Compliance</h3>
+
+        <div class="features-grid">
+            <div class="feature-card">
+                <h3><span class="icon">🔐</span> Criptografia End-to-End</h3>
+                <p>Todas as comunicações protegidas com TLS 1.3. Dados em trânsito sempre criptografados.</p>
+            </div>
+            <div class="feature-card">
+                <h3><span class="icon">🛡️</span> LGPD Compliance</h3>
+                <p>Sistema certificado e auditado. Direito ao esquecimento, portabilidade de dados.</p>
+            </div>
+            <div class="feature-card">
+                <h3><span class="icon">📋</span> Portaria MTP 671</h3>
+                <p>100% conforme legislação trabalhista brasileira para REP-P (Registro Eletrônico de Ponto).</p>
+            </div>
+            <div class="feature-card">
+                <h3><span class="icon">💾</span> Backup Automático</h3>
+                <p>Backup diário com retenção de 90 dias. Recuperação de desastres em menos de 1 hora.</p>
+            </div>
+            <div class="feature-card">
+                <h3><span class="icon">🔍</span> Auditoria Completa</h3>
+                <p>Log de todas as ações com timestamp, IP e usuário. Rastreabilidade total.</p>
+            </div>
+            <div class="feature-card">
+                <h3><span class="icon">⚡</span> Alta Disponibilidade</h3>
+                <p>SLA de 99.9% uptime. Redundância em múltiplas zonas AWS.</p>
+            </div>
+        </div>
+
+        <h3 class="section-subtitle" style="margin-top: 50px;">📊 Banco de Dados</h3>
+
+        <p style="font-size: 16px; color: var(--gray); margin-bottom: 20px;">
+            Schema profissional com 5 tabelas relacionais:
+        </p>
+
+        <div class="features-grid">
+            <div class="feature-card">
+                <h3><span class="icon">🏢</span> Companies</h3>
+                <p>Empresas/clientes. Suporte multi-tenant com isolamento total de dados.</p>
+            </div>
+            <div class="feature-card">
+                <h3><span class="icon">👤</span> Employees</h3>
+                <p>Funcionários com dados completos: CPF, email, departamento, cargo, status.</p>
+            </div>
+            <div class="feature-card">
+                <h3><span class="icon">⏰</span> PunchRecords</h3>
+                <p>Registros de ponto com timestamp, GPS, biometria verificada, status.</p>
+            </div>
+            <div class="feature-card">
+                <h3><span class="icon">👔</span> Users</h3>
+                <p>Usuários administradores com diferentes níveis de acesso (admin, manager, viewer).</p>
+            </div>
+            <div class="feature-card">
+                <h3><span class="icon">📝</span> AuditLogs</h3>
+                <p>Logs de auditoria com ação, entidade, detalhes JSON, IP e user agent.</p>
+            </div>
+            <div class="feature-card">
+                <h3><span class="icon">🔄</span> Migrations</h3>
+                <p>Alembic para versionamento. Histórico completo de mudanças no schema.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- PÁGINA 6: INVESTIMENTO -->
+<div class="page page-break">
+    <div class="section">
+        <h2 class="section-title">Planos e Investimento</h2>
+
+        <p style="text-align: center; font-size: 18px; color: var(--gray); margin-bottom: 50px;">
+            Escolha o plano ideal para o tamanho da sua empresa. <strong>Sem custos com hardware.</strong>
+            Sem surpresas. Cancele quando quiser.
+        </p>
+
+        <div class="pricing-grid">
+            <!-- STARTER -->
+            <div class="pricing-card">
+                <h3>Starter</h3>
+                <p style="font-size: 14px; color: var(--gray);">Para pequenas empresas</p>
+                <div class="price">
+                    R$ 299<small>/mês</small>
+                </div>
+                <ul>
+                    <li>Até 10 funcionários</li>
+                    <li>App Android completo</li>
+                    <li>Painel Web básico</li>
+                    <li>Biometria nativa</li>
+                    <li>Geolocalização GPS</li>
+                    <li>Relatórios em PDF</li>
+                    <li>Suporte por email</li>
+                    <li>1 empresa</li>
+                </ul>
+                <a href="#" class="btn">Contratar</a>
+            </div>
+
+            <!-- BUSINESS (FEATURED) -->
+            <div class="pricing-card featured">
+                <h3>Business</h3>
+                <p style="font-size: 14px; opacity: 0.9;">Mais escolhido ⭐</p>
+                <div class="price">
+                    R$ 599<small>/mês</small>
+                </div>
+                <ul>
+                    <li>Até 50 funcionários</li>
+                    <li>App Android completo</li>
+                    <li>Painel Web avançado</li>
+                    <li>Biometria + reconhecimento facial</li>
+                    <li>Geolocalização + mapa</li>
+                    <li>Relatórios PDF + Excel</li>
+                    <li>Suporte prioritário 24/7</li>
+                    <li>Até 3 empresas</li>
+                    <li>API com documentação</li>
+                    <li>Integração ERP/Folha</li>
+                </ul>
+                <a href="#" class="btn">Contratar</a>
+            </div>
+
+            <!-- ENTERPRISE -->
+            <div class="pricing-card">
+                <h3>Enterprise</h3>
+                <p style="font-size: 14px; color: var(--gray);">Para grandes empresas</p>
+                <div class="price">
+                    Custom
+                </div>
+                <ul>
+                    <li>Funcionários ilimitados</li>
+                    <li>App Android personalizado</li>
+                    <li>Painel Web customizado</li>
+                    <li>Biometria + facial + PIN</li>
+                    <li>Geolocalização avançada</li>
+                    <li>BI e dashboards personalizados</li>
+                    <li>Suporte dedicado + SLA</li>
+                    <li>Empresas ilimitadas</li>
+                    <li>API completa + webhooks</li>
+                    <li>Integrações sob medida</li>
+                    <li>White label (sua marca)</li>
+                    <li>Servidor dedicado</li>
+                </ul>
+                <a href="#" class="btn">Falar com Vendas</a>
+            </div>
+        </div>
+
+        <div class="highlight-box" style="margin-top: 50px;">
+            <h2>🎁 Bônus de Lançamento</h2>
+            <p style="font-size: 20px; margin: 20px 0;">
+                <strong>Primeiros 100 clientes</strong> ganham:
+            </p>
+            <ul style="list-style: none; font-size: 18px; line-height: 2;">
+                <li>✅ Setup e configuração GRÁTIS (valor: R$ 500)</li>
+                <li>✅ Primeiro mês 50% OFF</li>
+                <li>✅ Treinamento completo da equipe (valor: R$ 800)</li>
+                <li>✅ Customização de logo no app (valor: R$ 300)</li>
+            </ul>
+            <p style="font-size: 16px; margin-top: 20px; opacity: 0.8;">
+                Economia total: <strong>R$ 1.600</strong> + economia no primeiro mês
+            </p>
+        </div>
+
+        <h3 class="section-subtitle" style="margin-top: 50px;">💳 Formas de Pagamento</h3>
+
+        <div class="features-grid">
+            <div class="feature-card">
+                <h3><span class="icon">💳</span> Cartão de Crédito</h3>
+                <p>Parcelamento em até 12x. Cobrança recorrente automática.</p>
+            </div>
+            <div class="feature-card">
+                <h3><span class="icon">🏦</span> Boleto Bancário</h3>
+                <p>Mensal ou anual. Desconto de 10% para pagamento anual.</p>
+            </div>
+            <div class="feature-card">
+                <h3><span class="icon">📱</span> PIX</h3>
+                <p>Instantâneo. Desconto de 5% para pagamento via PIX.</p>
+            </div>
+            <div class="feature-card">
+                <h3><span class="icon">📄</span> Nota Fiscal</h3>
+                <p>NF-e emitida automaticamente. Válida para dedução fiscal.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- PÁGINA 7: ROI E CASOS DE USO -->
+<div class="page page-break">
+    <div class="section">
+        <h2 class="section-title">ROI e Benefícios Financeiros</h2>
+
+        <h3 class="section-subtitle">💰 Retorno sobre Investimento (ROI)</h3>
+
+        <div class="highlight-box">
+            <h2>Exemplo Real: Empresa com 30 Funcionários</h2>
+            <table style="width: 100%; margin-top: 30px; text-align: left; color: white;">
+                <tr style="border-bottom: 1px solid rgba(255,255,255,0.2);">
+                    <td style="padding: 15px; font-size: 16px;"><strong>Sistema Convencional (ano)</strong></td>
+                    <td style="padding: 15px; text-align: right; font-size: 18px;">R$ 12.500</td>
+                </tr>
+                <tr style="border-bottom: 1px solid rgba(255,255,255,0.2);">
+                    <td style="padding: 15px;">Hardware biométrico</td>
+                    <td style="padding: 15px; text-align: right;">R$ 5.000</td>
+                </tr>
+                <tr style="border-bottom: 1px solid rgba(255,255,255,0.2);">
+                    <td style="padding: 15px;">Mensalidade (R$ 350/mês)</td>
+                    <td style="padding: 15px; text-align: right;">R$ 4.200</td>
+                </tr>
+                <tr style="border-bottom: 1px solid rgba(255,255,255,0.2);">
+                    <td style="padding: 15px;">Manutenção anual</td>
+                    <td style="padding: 15px; text-align: right;">R$ 1.200</td>
+                </tr>
+                <tr style="border-bottom: 1px solid rgba(255,255,255,0.2);">
+                    <td style="padding: 15px;">Instalação + configuração</td>
+                    <td style="padding: 15px; text-align: right;">R$ 1.500</td>
+                </tr>
+                <tr style="border-bottom: 1px solid rgba(255,255,255,0.2);">
+                    <td style="padding: 15px;">Chamados técnicos (3x/ano)</td>
+                    <td style="padding: 15px; text-align: right;">R$ 600</td>
+                </tr>
+                <tr style="border-top: 3px solid white; margin-top: 10px;">
+                    <td style="padding: 20px; font-size: 18px;"><strong>PontoPrime (ano)</strong></td>
+                    <td style="padding: 20px; text-align: right; font-size: 22px; font-weight: 800;">R$ 5.988</td>
+                </tr>
+                <tr>
+                    <td style="padding: 15px;">Mensalidade (R$ 599/mês x 10*)</td>
+                    <td style="padding: 15px; text-align: right;">R$ 5.988</td>
+                </tr>
+                <tr style="border-top: 3px solid rgba(0,255,170,1); background: rgba(0,255,170,0.2);">
+                    <td style="padding: 20px; font-size: 20px;"><strong>💰 ECONOMIA NO ANO</strong></td>
+                    <td style="padding: 20px; text-align: right; font-size: 24px; font-weight: 800;">R$ 6.512</td>
+                </tr>
+            </table>
+            <p style="font-size: 14px; margin-top: 20px; opacity: 0.8;">
+                * Considerando 50% OFF no primeiro mês (bônus de lançamento)
+            </p>
+        </div>
+
+        <h3 class="section-subtitle" style="margin-top: 50px;">🎯 Benefícios Intangíveis</h3>
+
+        <div class="features-grid">
+            <div class="feature-card">
+                <h3><span class="icon">⏱️</span> Ganho de Tempo</h3>
+                <p>
+                    <strong>Redução de 85%</strong> no tempo de fechamento de folha.
+                    O que levava 2 dias, agora leva 2 horas.
+                </p>
+            </div>
+            <div class="feature-card">
+                <h3><span class="icon">🚫</span> Eliminação de Fraudes</h3>
+                <p>
+                    Biometria + GPS eliminam "ponto batido por colegas".
+                    Economia média de <strong>R$ 1.200/mês</strong> em horas fantasmas.
+                </p>
+            </div>
+            <div class="feature-card">
+                <h3><span class="icon">📊</span> Decisões Baseadas em Dados</h3>
+                <p>
+                    Dashboards em tempo real permitem ajustes imediatos.
+                    Identifique padrões, otimize escalas.
+                </p>
+            </div>
+            <div class="feature-card">
+                <h3><span class="icon">😊</span> Satisfação dos Colaboradores</h3>
+                <p>
+                    Interface moderna e simples. <strong>95% de aprovação</strong>
+                    em pesquisas com usuários.
+                </p>
+            </div>
+            <div class="feature-card">
+                <h3><span class="icon">⚖️</span> Conformidade Legal</h3>
+                <p>
+                    Zero multas trabalhistas. Sistema certificado pela Portaria MTP 671.
+                    Auditoria pronta para fiscalização.
+                </p>
+            </div>
+            <div class="feature-card">
+                <h3><span class="icon">🌱</span> Sustentabilidade</h3>
+                <p>
+                    Sem papel, sem impressões. <strong>100% digital</strong>.
+                    Contribua para o meio ambiente.
+                </p>
+            </div>
+        </div>
+
+        <h3 class="section-subtitle" style="margin-top: 50px;">🏆 Casos de Uso Ideais</h3>
+
+        <div class="features-grid">
+            <div class="feature-card">
+                <h3><span class="icon">🏠</span> Trabalho Remoto/Híbrido</h3>
+                <p>Perfeito para equipes em home office ou modelo híbrido. Registra de qualquer lugar.</p>
+            </div>
+            <div class="feature-card">
+                <h3><span class="icon">🚚</span> Equipes Externas</h3>
+                <p>Vendedores, motoristas, técnicos de campo. GPS comprova presença no cliente.</p>
+            </div>
+            <div class="feature-card">
+                <h3><span class="icon">🏢</span> Múltiplas Filiais</h3>
+                <p>Centralize controle de todas as unidades em um único painel. Relatórios consolidados.</p>
+            </div>
+            <div class="feature-card">
+                <h3><span class="icon">⏰</span> Turnos e Escalas</h3>
+                <p>Gestão completa de horários variáveis. Alertas de atrasos e ausências.</p>
+            </div>
+            <div class="feature-card">
+                <h3><span class="icon">🏗️</span> Obras e Canteiros</h3>
+                <p>Controle presença em obras. Geolocalização comprova deslocamento.</p>
+            </div>
+            <div class="feature-card">
+                <h3><span class="icon">🏥</span> Saúde e Hospitais</h3>
+                <p>Plantões, trocas de turno, banco de horas. Conformidade com normas da categoria.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- PÁGINA 8: IMPLEMENTAÇÃO E SUPORTE -->
+<div class="page page-break">
+    <div class="section">
+        <h2 class="section-title">Implementação e Suporte</h2>
+
+        <h3 class="section-subtitle">🚀 Processo de Implementação</h3>
+
+        <p style="font-size: 16px; color: var(--gray); margin-bottom: 30px;">
+            Do contrato ao go-live em apenas <strong>5 dias úteis</strong>. Processo simples e sem complicação.
+        </p>
+
+        <div style="background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%); padding: 40px; border-radius: 20px; margin-bottom: 40px;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 30px;">
+                <div style="flex: 1; text-align: center;">
+                    <div style="width: 60px; height: 60px; background: var(--primary); color: white; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; font-size: 24px; font-weight: 700; margin-bottom: 15px;">1</div>
+                    <h4 style="color: var(--primary); font-size: 16px; margin-bottom: 10px;">Contratação</h4>
+                    <p style="font-size: 14px; color: var(--gray);">Escolha do plano<br>Assinatura do contrato<br><strong>Tempo: 1 dia</strong></p>
+                </div>
+                <div style="width: 0; height: 0; border-top: 10px solid transparent; border-bottom: 10px solid transparent; border-left: 15px solid var(--primary);"></div>
+                <div style="flex: 1; text-align: center;">
+                    <div style="width: 60px; height: 60px; background: var(--primary); color: white; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; font-size: 24px; font-weight: 700; margin-bottom: 15px;">2</div>
+                    <h4 style="color: var(--primary); font-size: 16px; margin-bottom: 10px;">Configuração</h4>
+                    <p style="font-size: 14px; color: var(--gray);">Cadastro da empresa<br>Importação de funcionários<br><strong>Tempo: 1 dia</strong></p>
+                </div>
+                <div style="width: 0; height: 0; border-top: 10px solid transparent; border-bottom: 10px solid transparent; border-left: 15px solid var(--primary);"></div>
+                <div style="flex: 1; text-align: center;">
+                    <div style="width: 60px; height: 60px; background: var(--primary); color: white; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; font-size: 24px; font-weight: 700; margin-bottom: 15px;">3</div>
+                    <h4 style="color: var(--primary); font-size: 16px; margin-bottom: 10px;">Treinamento</h4>
+                    <p style="font-size: 14px; color: var(--gray);">RH + Gestores<br>Vídeos tutoriais<br><strong>Tempo: 2 dias</strong></p>
+                </div>
+                <div style="width: 0; height: 0; border-top: 10px solid transparent; border-bottom: 10px solid transparent; border-left: 15px solid var(--primary);"></div>
+                <div style="flex: 1; text-align: center;">
+                    <div style="width: 60px; height: 60px; background: var(--secondary); color: white; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; font-size: 24px; font-weight: 700; margin-bottom: 15px;">✓</div>
+                    <h4 style="color: var(--secondary); font-size: 16px; margin-bottom: 10px;">Go-Live</h4>
+                    <p style="font-size: 14px; color: var(--gray);">Sistema no ar<br>Suporte dedicado<br><strong>Tempo: 1 dia</strong></p>
+                </div>
+            </div>
+        </div>
+
+        <h3 class="section-subtitle">🎓 Treinamento Incluso</h3>
+
+        <div class="features-grid">
+            <div class="feature-card">
+                <h3><span class="icon">👥</span> Para RH e Gestores</h3>
+                <p>Workshop de 2h (online). Painel web, relatórios, gestão de funcionários, troubleshooting.</p>
+            </div>
+            <div class="feature-card">
+                <h3><span class="icon">📱</span> Para Colaboradores</h3>
+                <p>Vídeo tutorial de 5min. Como instalar, fazer login, registrar ponto, ver histórico.</p>
+            </div>
+            <div class="feature-card">
+                <h3><span class="icon">📚</span> Material de Apoio</h3>
+                <p>Manuais em PDF, vídeos tutoriais, FAQ completo. Disponível 24/7 no painel.</p>
+            </div>
+            <div class="feature-card">
+                <h3><span class="icon">🔄</span> Reciclagem</h3>
+                <p>Treinamentos mensais gratuitos. Atualizações de features. Webinars e workshops.</p>
+            </div>
+        </div>
+
+        <h3 class="section-subtitle" style="margin-top: 50px;">💬 Suporte Técnico</h3>
+
+        <div class="features-grid">
+            <div class="feature-card">
+                <h3><span class="icon">📞</span> Múltiplos Canais</h3>
+                <p>WhatsApp, Email, Chat no painel, Telefone. Escolha o canal de sua preferência.</p>
+            </div>
+            <div class="feature-card">
+                <h3><span class="icon">⏰</span> Horário Estendido</h3>
+                <p>
+                    <strong>Starter:</strong> Seg-Sex 8h-18h<br>
+                    <strong>Business:</strong> 24/7<br>
+                    <strong>Enterprise:</strong> 24/7 + dedicado
+                </p>
+            </div>
+            <div class="feature-card">
+                <h3><span class="icon">⚡</span> SLA Garantido</h3>
+                <p>
+                    <strong>Crítico:</strong> 2h<br>
+                    <strong>Alto:</strong> 8h<br>
+                    <strong>Médio:</strong> 24h<br>
+                    <strong>Baixo:</strong> 48h
+                </p>
+            </div>
+            <div class="feature-card">
+                <h3><span class="icon">🎯</span> Atendimento Especializado</h3>
+                <p>Equipe técnica treinada. Conhecimento profundo do sistema. Resolução eficaz.</p>
+            </div>
+            <div class="feature-card">
+                <h3><span class="icon">🔧</span> Atualizações Automáticas</h3>
+                <p>Novas features todo mês. Correções de bugs imediatas. Sem downtime.</p>
+            </div>
+            <div class="feature-card">
+                <h3><span class="icon">📊</span> Monitoramento Proativo</h3>
+                <p>Sistema monitora performance 24/7. Identificamos problemas antes do cliente perceber.</p>
+            </div>
+        </div>
+
+        <div class="highlight-box" style="margin-top: 40px;">
+            <h2>🏆 Satisfação Garantida</h2>
+            <p style="font-size: 20px; margin: 20px 0;">
+                <strong>30 dias de garantia incondicional.</strong>
+            </p>
+            <p style="font-size: 16px; opacity: 0.9;">
+                Não ficou satisfeito? Cancele sem custo e receba 100% do seu dinheiro de volta.
+                Sem perguntas, sem burocracia.
+            </p>
+        </div>
+    </div>
+</div>
+
+<!-- PÁGINA 9: CONTATO E PRÓXIMOS PASSOS -->
+<div class="page page-break">
+    <div class="section">
+        <h2 class="section-title">Vamos Começar?</h2>
+
+        <div class="highlight-box">
+            <h2 style="font-size: 42px; margin-bottom: 30px;">Transforme o Controle de Ponto da Sua Empresa</h2>
+            <p style="font-size: 22px; line-height: 1.8;">
+                Junte-se a <strong>centenas de empresas</strong> que já modernizaram seu RH com o PontoPrime.
+                Elimine custos, fraudes e dores de cabeça. Ganhe tempo, conformidade e tranquilidade.
+            </p>
+        </div>
+
+        <h3 class="section-subtitle" style="margin-top: 50px;">📞 Entre em Contato</h3>
+
+        <div class="specs-list">
+            <div class="spec-item">
+                <div class="icon">📱</div>
+                <div class="text">
+                    <div class="label">WhatsApp</div>
+                    <div class="value">(11) 9 9999-9999</div>
+                </div>
+            </div>
+            <div class="spec-item">
+                <div class="icon">✉️</div>
+                <div class="text">
+                    <div class="label">Email</div>
+                    <div class="value">vendas@automaniaai.com.br</div>
+                </div>
+            </div>
+            <div class="spec-item">
+                <div class="icon">🌐</div>
+                <div class="text">
+                    <div class="label">Website</div>
+                    <div class="value">www.automaniaai.com.br</div>
+                </div>
+            </div>
+            <div class="spec-item">
+                <div class="icon">📍</div>
+                <div class="text">
+                    <div class="label">Endereço</div>
+                    <div class="value">São Paulo - SP, Brasil</div>
+                </div>
+            </div>
+        </div>
+
+        <h3 class="section-subtitle" style="margin-top: 50px;">🎯 Próximos Passos</h3>
+
+        <div style="background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%); padding: 40px; border-radius: 20px;">
+            <ol style="font-size: 18px; line-height: 2.5; color: var(--dark); margin-left: 20px;">
+                <li><strong>Agende uma demonstração</strong> gratuita de 30 minutos com nosso time</li>
+                <li><strong>Tire todas as suas dúvidas</strong> sobre features, preços e implementação</li>
+                <li><strong>Receba uma proposta personalizada</strong> para o tamanho da sua empresa</li>
+                <li><strong>Assine o contrato</strong> e garanta o bônus de lançamento</li>
+                <li><strong>Go-live em 5 dias</strong> e comece a economizar imediatamente</li>
+            </ol>
+        </div>
+
+        <div style="text-align: center; margin-top: 60px;">
+            <a href="#" class="btn" style="font-size: 20px; padding: 20px 60px;">
+                🚀 Agendar Demonstração Gratuita
+            </a>
+            <p style="font-size: 14px; color: var(--gray); margin-top: 20px;">
+                Sem compromisso. Sem cartão de crédito. 100% gratuito.
+            </p>
+        </div>
+
+        <h3 class="section-subtitle" style="margin-top: 80px;">❓ Perguntas Frequentes</h3>
+
+        <div style="margin-top: 30px;">
+            <div style="background: #f8f9fa; padding: 25px; border-radius: 15px; margin-bottom: 20px; border-left: 5px solid var(--primary);">
+                <h4 style="color: var(--primary); font-size: 16px; margin-bottom: 10px;">Preciso comprar celulares novos para os funcionários?</h4>
+                <p style="color: var(--gray); font-size: 14px; line-height: 1.6;">
+                    Não! O PontoPrime funciona no celular próprio do colaborador (Android 7.0+).
+                    Qualquer smartphone compatível serve. Economia de milhares de reais em hardware.
+                </p>
+            </div>
+
+            <div style="background: #f8f9fa; padding: 25px; border-radius: 15px; margin-bottom: 20px; border-left: 5px solid var(--primary);">
+                <h4 style="color: var(--primary); font-size: 16px; margin-bottom: 10px;">E se o funcionário não tiver biometria no celular?</h4>
+                <p style="color: var(--gray); font-size: 14px; line-height: 1.6;">
+                    O sistema aceita também PIN (senha numérica de 4-6 dígitos) ou reconhecimento facial.
+                    É flexível e compatível com 99% dos smartphones Android.
+                </p>
+            </div>
+
+            <div style="background: #f8f9fa; padding: 25px; border-radius: 15px; margin-bottom: 20px; border-left: 5px solid var(--primary);">
+                <h4 style="color: var(--primary); font-size: 16px; margin-bottom: 10px;">O sistema é aprovado pelo Ministério do Trabalho?</h4>
+                <p style="color: var(--gray); font-size: 14px; line-height: 1.6;">
+                    Sim! O PontoPrime está 100% conforme a Portaria MTP 671/2021, que regulamenta o REP-P
+                    (Registro Eletrônico de Ponto por Ponto). Auditoria pronta para fiscalização.
+                </p>
+            </div>
+
+            <div style="background: #f8f9fa; padding: 25px; border-radius: 15px; margin-bottom: 20px; border-left: 5px solid var(--primary);">
+                <h4 style="color: var(--primary); font-size: 16px; margin-bottom: 10px;">Posso integrar com meu sistema de folha de pagamento?</h4>
+                <p style="color: var(--gray); font-size: 14px; line-height: 1.6;">
+                    Sim! Oferecemos API completa (RESTful) com documentação. Integração com qualquer ERP,
+                    folha ou sistema de RH. Também exportamos relatórios em Excel/PDF prontos para importação.
+                </p>
+            </div>
+
+            <div style="background: #f8f9fa; padding: 25px; border-radius: 15px; margin-bottom: 20px; border-left: 5px solid var(--primary);">
+                <h4 style="color: var(--primary); font-size: 16px; margin-bottom: 10px;">Como funciona o suporte em caso de problemas?</h4>
+                <p style="color: var(--gray); font-size: 14px; line-height: 1.6;">
+                    Suporte via WhatsApp, email e chat. Plano Business tem atendimento 24/7. SLA garantido:
+                    problemas críticos resolvidos em até 2 horas. Time técnico especializado.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer" style="margin-top: 80px;">
+        <div class="company-name">AutoManiaAI</div>
+        <div class="contact" style="margin-top: 20px;">
+            <p><strong>Website:</strong> www.automaniaai.com.br</p>
+            <p><strong>Email:</strong> vendas@automaniaai.com.br</p>
+            <p><strong>WhatsApp:</strong> (11) 9 9999-9999</p>
+            <p style="margin-top: 20px; font-size: 12px;">
+                © 2025 AutoManiaAI. Todos os direitos reservados.<br>
+                CNPJ: 00.000.000/0001-00
+            </p>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
