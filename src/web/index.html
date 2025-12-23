@@ -3,18 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PontoPrime - Painel de Demonstração</title>
+    <title>PontoPrime - Painel André Engenharia</title>
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
     <div class="container">
-        <!-- Header -->
+        <!-- Header Institucional -->
         <header class="header">
-            <div class="logo">
-                <h1>🕐 PontoPrime</h1>
-                <p class="subtitle">Sistema de Registro de Ponto com Biometria</p>
+            <div class="header-top">
+                <div class="logos-container">
+                    <img src="assets/img/logo-automaniaai.svg" alt="AutoManiaAI" class="logo-automania">
+                    <div class="logo-separator"></div>
+                    <img src="assets/img/logo-andre-engenharia.svg" alt="André Engenharia" class="logo-andre">
+                </div>
+                <div class="demo-badge">DEMO</div>
             </div>
-            <div class="demo-badge">VERSÃO DEMO</div>
+            <div class="header-bottom">
+                <div class="system-title">
+                    <h1>⏱️ PontoPrime</h1>
+                    <p class="subtitle">Sistema de Registro de Ponto Eletrônico com Biometria</p>
+                </div>
+            </div>
         </header>
 
         <!-- Stats Cards -->
@@ -30,7 +39,7 @@
                 <div class="stat-icon">📍</div>
                 <div class="stat-content">
                     <h3 id="total-punches">-</h3>
-                    <p>Registros Hoje</p>
+                    <p>Registros de Hoje</p>
                 </div>
             </div>
             <div class="stat-card">
@@ -89,18 +98,31 @@
                 ⬇️ Baixar APK (Android 7.0+)
             </a>
             <p class="download-note">
-                <strong>Instruções:</strong><br>
-                1. Baixe o arquivo APK<br>
-                2. Permita instalação de fontes desconhecidas nas configurações<br>
-                3. Instale o app<br>
-                4. Faça login com seu ID de funcionário
+                <strong>Instruções de Instalação:</strong><br>
+                1. Baixe o arquivo APK acima<br>
+                2. No Android, permita "Fontes Desconhecidas" nas configurações<br>
+                3. Instale o aplicativo<br>
+                4. Faça login com seu ID de funcionário<br>
+                5. Registre seu ponto com segurança biométrica
             </p>
         </div>
 
-        <!-- Footer -->
+        <!-- Footer Institucional -->
         <footer class="footer">
-            <p>&copy; 2025 PontoPrime - Versão Demo | Desenvolvido para André - AutoManiaAI</p>
-            <p class="api-endpoint">API: <code id="api-url">Carregando...</code></p>
+            <div class="footer-content">
+                <div class="footer-logos">
+                    <img src="assets/img/logo-automaniaai.svg" alt="AutoManiaAI" class="footer-logo">
+                    <img src="assets/img/logo-andre-engenharia.svg" alt="André Engenharia" class="footer-logo">
+                </div>
+                <div class="footer-text">
+                    <p class="footer-title">PontoPrime - Versão Demo</p>
+                    <p class="footer-subtitle">Desenvolvido por <strong>AutoManiaAI</strong> para <strong>André Engenharia</strong></p>
+                    <p class="footer-info">&copy; 2025 Todos os direitos reservados</p>
+                </div>
+            </div>
+            <div class="footer-tech">
+                <p class="api-endpoint">API Backend: <code id="api-url">Carregando...</code></p>
+            </div>
         </footer>
     </div>
 
