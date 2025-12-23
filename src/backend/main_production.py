@@ -5,11 +5,13 @@ Porta: 9000
 """
 from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi.staticfiles import StaticFiles
 from pydantic import BaseModel, Field
 from datetime import datetime
 from typing import Optional
 import logging
 import uvicorn
+import os
 
 # Configuração de logging
 logging.basicConfig(
@@ -20,7 +22,7 @@ logger = logging.getLogger(__name__)
 
 app = FastAPI(
     title="PontoPrime API - Produção",
-    description="Sistema de Registro de Ponto com Biometria - Demo André",
+    description="Sistema de Registro de Ponto com Biometria - Demo PLANTHERM",
     version="1.0.0-DEMO"
 )
 
@@ -61,6 +63,13 @@ class PunchRecordResponse(BaseModel):
     message: str
     record_id: Optional[int] = None
 
+# Servir arquivos estáticos do painel web (resolve Mixed Content)
+# Caminho relativo para a pasta web
+WEB_DIR = os.path.join(os.path.dirname(__file__), "..", "web")
+if os.path.exists(WEB_DIR):
+    app.mount("/painel", StaticFiles(directory=WEB_DIR, html=True), name="painel")
+    logger.info(f"✅ Painel web disponível em http://54.207.172.193:9000/painel/")
+
 # Storage em memória para demo (resetado quando o servidor reinicia)
 # Em produção real, isso seria um banco de dados PostgreSQL
 DEMO_RECORDS = {}
@@ -73,7 +82,7 @@ async def root():
         "service": "PontoPrime API - Produção",
         "version": "1.0.0-DEMO",
         "status": "running",
-        "client": "André - AutoManiaAI",
+        "client": "PLANTHERM - AutoManiaAI",
         "api_docs": "/docs"
     }
 
@@ -185,7 +194,8 @@ async def clear_all_records(secret: str):
 if __name__ == "__main__":
     logger.info("🚀 Iniciando PontoPrime API - Produção (AWS)")
     logger.info("📍 Porta: 9000")
-    logger.info("🌐 Cliente: André - AutoManiaAI")
+    logger.info("🌐 Cliente: PLANTHERM - AutoManiaAI")
+    logger.info("📊 Painel Web: http://54.207.172.193:9000/painel/")
 
     uvicorn.run(
         app,
