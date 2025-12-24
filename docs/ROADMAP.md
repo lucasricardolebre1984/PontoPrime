@@ -15,16 +15,50 @@
 - [x] **Android:** Repository pattern para abstração de dados.
 - [x] **Documentação:** README completo para backend e Android.
 
-## Fase 2: Versão de Produção
-- [ ] **Backend:** Configurar PostgreSQL.
-- [ ] **Backend:** Implementar schemas de `Employees`, `PunchRecords`, `Users`.
-- [ ] **Backend:** Desenvolver APIs CRUD para gestão de funcionários.
-- [ ] **Backend:** Desenvolver API de auditoria com filtros.
-- [ ] **Backend:** Implementar lógica para geração de relatórios (PDF, CSV).
-- [ ] **Painel Web:** Criar dashboard com gráficos.
+## Fase 2: Versão de Produção (V2 FULL) - ✅ PARCIALMENTE COMPLETO
+
+### Backend - Base de Dados ✅
+- [x] **Backend:** Configurar PostgreSQL.
+- [x] **Backend:** Implementar schemas de `Companies`, `Employees`, `PunchRecords`, `Users`, `AuditLogs`.
+- [x] **Backend:** Desenvolver APIs CRUD para gestão de funcionários.
+- [x] **Backend:** Implementar Alembic para migrations.
+- [x] **Backend:** Docker Compose completo (PostgreSQL + Backend + Nginx).
+
+### Backend - Segurança e Features Avançadas ⏳ EM ANDAMENTO
+- [ ] **Backend:** Implementar autenticação JWT.
+- [ ] **Backend:** Adicionar rate limiting.
+- [ ] **Backend:** HTTPS com Let's Encrypt.
+- [ ] **Backend:** Desenvolver API de auditoria com filtros avançados.
+- [ ] **Backend:** Implementar geração de relatórios PDF (ReportLab).
+- [ ] **Backend:** Implementar exportação Excel (openpyxl).
+
+### Painel Web ⏳ EM ANDAMENTO
+- [x] **Painel Web:** Dashboard básico com estatísticas.
+- [ ] **Painel Web:** Dashboard com gráficos (Chart.js).
 - [ ] **Painel Web:** Implementar UI para CRUD de funcionários.
-- [ ] **Painel Web:** Implementar UI de auditoria com mapa.
-- [ ] **Android:** Integrar a API `BiometricPrompt` real.
-- [ ] **Android:** Implementar modo offline com sincronização automática.
+- [ ] **Painel Web:** Implementar UI de auditoria com mapa (Google Maps API).
+- [ ] **Painel Web:** Relatórios avançados com filtros.
+
+### Android - Features Avançadas ⏳ EM ANDAMENTO
+- [x] **Android:** Implementar modo offline com sincronização automática.
+- [ ] **Android:** Integrar a API `BiometricPrompt` REAL (remover AlertDialog).
+- [ ] **Android:** Implementar GPS REAL (remover mock).
 - [ ] **Android:** Adicionar validação de GPS ativo.
-- [ ] **Android:** Criptografar dados locais.
+- [ ] **Android:** Criptografar dados locais (SQLCipher).
+- [ ] **Android:** Notificações push para confirmação de registro.
+
+## Fase 3: Deploy e Produção ⏳ EM ANDAMENTO
+
+### Deploy
+- [x] **Deploy:** Script único de deploy (`deploy_v2.sh`).
+- [ ] **Deploy:** Testar deploy localmente.
+- [ ] **Deploy:** Deploy V2 em produção AWS (porta 9001).
+- [ ] **Deploy:** Liberar porta 9001 no Security Group.
+- [ ] **Deploy:** Validar funcionamento end-to-end.
+
+### DevOps
+- [ ] **DevOps:** CI/CD com GitHub Actions.
+- [ ] **DevOps:** Testes automatizados (pytest + instrumented tests).
+- [ ] **DevOps:** Monitoramento com Prometheus + Grafana.
+- [ ] **DevOps:** Backup automático PostgreSQL.
+- [ ] **DevOps:** Ambiente de staging separado.
