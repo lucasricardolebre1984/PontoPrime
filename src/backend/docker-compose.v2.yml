@@ -18,7 +18,7 @@ services:
       - postgres_data_v2:/var/lib/postgresql/data
       - ./init.sql:/docker-entrypoint-initdb.d/init.sql:ro
     ports:
-      - "5433:5432"  # Porta externa 5433 (evita conflito com 5432)
+      - "6000:5432"  # Porta externa 6000 (PostgreSQL V2 FULL - isolado)
     healthcheck:
       test: ["CMD-SHELL", "pg_isready -U ${DB_USER:-pontoprime}"]
       interval: 10s

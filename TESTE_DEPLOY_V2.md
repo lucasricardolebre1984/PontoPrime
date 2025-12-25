@@ -331,7 +331,7 @@ Após rodar `./deploy_v2.sh`, você deve ter:
 
 - [ ] ✅ Health check respondendo em http://localhost:9001/health
 - [ ] ✅ Swagger UI acessível em http://localhost:9001/docs
-- [ ] ✅ PostgreSQL rodando (porta 5433)
+- [ ] ✅ PostgreSQL rodando (porta 6000)
 - [ ] ✅ 3 containers UP (db_v2, backend_v2, nginx_v2)
 - [ ] ✅ Tabelas criadas (companies, employees, punch_records, users, audit_logs)
 - [ ] ✅ Funcionários seed data (4 funcionários)

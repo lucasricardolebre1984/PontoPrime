@@ -249,6 +249,7 @@ Pillow==10.1.0    # Image support for PDFs
 ### Ambientes
 - **DEMO:** http://localhost:9000 (clientes novos)
 - **FULL:** http://localhost:9001 (produção)
+- **PostgreSQL V2:** localhost:6000
 - **Produção AWS:** http://54.207.172.193:9001
 
 ### Logs

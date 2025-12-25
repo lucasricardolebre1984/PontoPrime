@@ -13,7 +13,7 @@ Este documento explica como rodar as duas versões do PontoPrime **completamente
 | **Dockerfile** | `Dockerfile` | `Dockerfile.v2` |
 | **Docker Compose** | `docker-compose.yml` | `docker-compose.v2.yml` |
 | **Banco de Dados** | Memória (perde ao reiniciar) | PostgreSQL (persistente) |
-| **PostgreSQL Porta** | - | 5433 |
+| **PostgreSQL Porta** | - | 6000 |
 | **Nginx HTTP** | 80 | 8080 |
 | **Nginx HTTPS** | 443 | 8443 |
 | **Uso** | Testes de novos clientes | Produção profissional |
